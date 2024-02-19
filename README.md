@@ -7,11 +7,14 @@ The **server** uses the Express.js framework (on top of Node.js). It uses hardco
 
 The **client** uses the React framework.
 
-## How to run
+## How to run 
 In both folders, run
 ```
+npm install
 npm run dev
 ```
+
+
 
 ## What it looks like
 Before fetch               |  After fetch
