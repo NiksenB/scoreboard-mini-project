@@ -16,7 +16,8 @@ function App() {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      setScores(data)
+      console.log(data);
+      setScores(data);
       setAwaitingFetch(false);
     } catch (error) {
       console.error('Error fetching scores:', error);
@@ -57,9 +58,5 @@ function App() {
     </div>
   )
 }
-
-    /*<form action="Create" onSubmit={createUser}>
-      <input type="text" onChange={(e) => setUser(e.target.value)} value={user}></input>
-    </form> */
 
 export default App

@@ -1,12 +1,15 @@
 const express = require('express')
-const { Client } = require('pg')
 const app = express()
-const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  database: 'scoreboard',
-})
+const fs = require('fs')
+
+//Only in use when using postgres database, password field omitted.
+// const { Client } = require("pg");
+// const client = new Client({
+//     user: "postgres",
+//     host: "localhost",
+//     port: 5432,
+//     database: "scoreboard",
+// });
 
 //Fix cors issues by adding middleware
 app.use((req, res, next) => {
@@ -22,28 +25,50 @@ app.use((req, res, next) => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-//Connect to database
-connect()
-async function connect() {
-  try {
-    await client.connect()
-    console.log(`Connected`)
-  } catch (e) {
-    console.error(`connection failed ${e}`)
-  }
-}
+//connect to database
+// async function connect() {
+//     try {
+//         await client.connect();
+//         console.log(Connected);
+//     } catch (e) {
+//         console.error(connection failed ${e})
+//     }
+// }
+//connect();
 
-//Fetch user information
 app.get('/scoreboard', async (req, res) => {
   try {
-    const results = await client.query(
-      'SELECT * FROM Scores S JOIN Users U ON S.uid = U.uid;'
-    )
-    res.json(results.rows)
+    //Fetch from database
+    //const results = await client.query("SELECT * FROM Scores S JOIN Users U ON S.uid = U.uid;")
+    //res.json(results.rows)
+
+    const jsonData = fs.readFileSync('data.json', 'utf8')
+    const data = JSON.parse(jsonData)
+    const results = data.map((score) => {
+      const user = data.find((u) => u.uid === score.uid)
+      return { ...score, name: user.name }
+    })
+    res.json(results)
   } catch (e) {
     console.log('There was an error')
     res.send('There was an error')
   }
+
+  //res.json([])
+})
+
+app.post('/scoreboard', async (req, res) => {
+  try {
+    const results = await client.query('INSERT INTO users (name) VALUES ($1)', [
+      req.body.user,
+    ])
+    res.status(200)
+  } catch (e) {
+    console.log('There was an error')
+    res.send('There was an error')
+  }
+
+  //res.json([])
 })
 
 app.listen(5001, () => console.log('listening on port 5001....'))
