@@ -12,3 +12,5 @@ In both folders, run
 ```
 npm run dev
 ```
+![image](https://github.com/NiksenB/scoreboard-mini-project/assets/90034452/f5912297-5256-4caf-a749-b4a53a7d22a0)
+![image](https://github.com/NiksenB/scoreboard-mini-project/assets/90034452/d2b5e96f-ddb9-4dfa-acd2-d4279953fa4e)
