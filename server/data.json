@@ -2,29 +2,65 @@
     {
       "date": "2024-02-18T23:00:00.000Z",
       "name": "Rikke",
-      "points": 5500,
-      "sid": 5,
-      "uid": 1
-    },
-    {
-      "date": "2024-02-18T23:00:00.000Z",
-      "name": "Adam",
-      "points": 5100,
-      "sid": 3,
-      "uid": 2
-    },
-    {
-      "date": "2024-02-18T23:00:00.000Z",
-      "name": "Rikke",
       "points": 4000,
+      "attempts": 2,
       "sid": 1,
       "uid": 1
     },
     {
-      "date": "2024-02-18T23:00:00.000Z",
+      "date": "2022-05-18T09:00:00.000Z",
       "name": "Jonas",
+      "points": 7000,
+      "attempts": 3,
+      "sid": 2,
+      "uid": 3
+    },
+    {
+      "date": "2022-09-29T09:00:00.000Z",
+      "name": "Adam",
+      "points": 5100,
+      "attempts": 1,
+      "sid": 3,
+      "uid": 2
+    },
+    {
+      "date": "2024-02-14T23:00:00.000Z",
+      "name": "Jonas",
+      "attempts": 3,
       "points": 3400,
       "sid": 4,
+      "uid": 3
+    },
+    {
+      "date": "2024-01-01T12:00:00.000Z",
+      "name": "Rikke",
+      "points": 5500,
+      "attempts": 2,
+      "sid": 5,
+      "uid": 1
+    },
+    {
+      "date": "2024-02-18T10:00:00.000Z",
+      "name": "Bob",
+      "points": 1100,
+      "attempts": 1,
+      "sid": 6,
+      "uid": 4
+    },
+    {
+      "date": "2011-02-19T11:00:00.000Z",
+      "name": "Ellie",
+      "attempts": 1,
+      "points": 2000,
+      "sid": 7,
+      "uid": 5
+    },
+    {
+      "date": "2024-02-14T23:00:00.000Z",
+      "name": "Jonas",
+      "attempts": 3,
+      "points": 5200,
+      "sid": 8,
       "uid": 3
     }
   ]

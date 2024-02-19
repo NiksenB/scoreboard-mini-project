@@ -37,7 +37,8 @@ function App() {
               <tr>
                 <th>Name</th>
                 <th>Points</th>
-                <th>Date</th>
+                <th>Attempts</th>
+                <th>Timestamp</th>
               </tr>
             </thead>
             <tbody>
@@ -47,6 +48,7 @@ function App() {
                   <tr key={s.sid}>
                     <td>{s.name}</td>
                     <td>{s.points}</td>
+                    <td>{s.attempts}</td>
                     <td>{s.date}</td>
                   </tr>
               ))}
