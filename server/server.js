@@ -2,14 +2,24 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 
-//Only in use when using postgres database, password field omitted.
+//Only in use when using postgres database.
 // const { Client } = require("pg");
 // const client = new Client({
-//     user: "postgres",
+//     user: "your-username",
+//     password: "your-password",
 //     host: "localhost",
 //     port: 5432,
 //     database: "scoreboard",
 // });
+// async function connect() {
+//     try {
+//         await client.connect();
+//         console.log(Connected);
+//     } catch (e) {
+//         console.error(connection failed ${e})
+//     }
+// }
+//connect();
 
 //Circumvent cors issues
 app.use((req, res, next) => {
@@ -24,17 +34,6 @@ app.use((req, res, next) => {
 })
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
-//connect to database
-// async function connect() {
-//     try {
-//         await client.connect();
-//         console.log(Connected);
-//     } catch (e) {
-//         console.error(connection failed ${e})
-//     }
-// }
-//connect();
 
 app.get('/scoreboard', async (req, res) => {
   try {
@@ -53,8 +52,6 @@ app.get('/scoreboard', async (req, res) => {
     console.log('There was an error')
     res.send('There was an error')
   }
-
-  //res.json([])
 })
 
 app.post('/scoreboard', async (req, res) => {
@@ -67,8 +64,6 @@ app.post('/scoreboard', async (req, res) => {
     console.log('There was an error')
     res.send('There was an error')
   }
-
-  //res.json([])
 })
 
 app.listen(5001, () => console.log('listening on port 5001....'))
