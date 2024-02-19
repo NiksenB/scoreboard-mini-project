@@ -11,9 +11,9 @@ const fs = require('fs')
 //     database: "scoreboard",
 // });
 
-//Fix cors issues by adding middleware
+//Circumvent cors issues
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173')
+  res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Credentials', 'true')
   res.header(
     'Access-Control-Allow-Headers',
