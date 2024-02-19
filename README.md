@@ -1,5 +1,5 @@
 ## Description
-This is an extremely simple fullstack program that tracks and presents user points (for a game) on a scoreboard.
+This is an extremely simple fullstack program that presents user 'points' (for a game) on a scoreboard.
 
 I have chosen to separate backend and frontend in a server and client folder. 
 
