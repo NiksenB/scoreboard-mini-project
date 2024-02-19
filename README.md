@@ -7,6 +7,9 @@ The **server** uses the Express.js framework (on top of Node.js). It uses hardco
 
 The **client** uses the React framework.
 
+## Prerequisites
+You will need to install Node.js https://nodejs.org/en/download 
+
 ## How to run 
 In both folders, run
 ```
